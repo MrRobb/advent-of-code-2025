@@ -13,9 +13,13 @@ fn bench1(c: &mut Criterion) {
     // c.bench_function("Day 2 | Part 1", |b| b.iter(|| day02::find_invalid_two(&input02)));
     // c.bench_function("Day 2 | Part 2", |b| b.iter(|| day02::find_invalid_any(&input02)));
 
-    let input03 = read_to_string("input/day03.txt").expect("Input file not found");
-    c.bench_function("Day 3 | Part 1", |b| b.iter(|| day03::find_batteries_2(&input03)));
-    c.bench_function("Day 3 | Part 2", |b| b.iter(|| day03::find_batteries_12(&input03)));
+    // let input03 = read_to_string("input/day03.txt").expect("Input file not found");
+    // c.bench_function("Day 3 | Part 1", |b| b.iter(|| day03::find_batteries_2(&input03)));
+    // c.bench_function("Day 3 | Part 2", |b| b.iter(|| day03::find_batteries_12(&input03)));
+
+    let input04 = read_to_string("input/day04.txt").expect("Input file not found");
+    c.bench_function("Day 4 | Part 1", |b| b.iter(|| day04::count_rolls_once(&input04)));
+    c.bench_function("Day 4 | Part 2", |b| b.iter(|| day04::count_rolls_all(&input04)));
 }
 
 criterion_group!(benches, bench1);

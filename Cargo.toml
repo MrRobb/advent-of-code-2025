@@ -7,6 +7,7 @@ default-run = "advent-of-code-2025"
 
 [dependencies]
 itertools = "0.14.0"
+pathfinding = "4.14.0"
 
 [dev-dependencies]
 criterion = "0.8.0"
@@ -19,14 +20,25 @@ harness = false
 lto = "fat"
 codegen-units = 1
 
-# [[bin]]
-# name = "day01"
-# path = "src/day01.rs"
+[lib]
+path = "src/rust/lib.rs"
 
-# [[bin]]
-# name = "day02"
-# path = "src/day02.rs"
+[[bin]]
+name = "advent-of-code-2025"
+path = "src/rust/main.rs"
 
-# [[bin]]
-# name = "day03"
-# path = "src/day03.rs"
+[[bin]]
+name = "day01"
+path = "src/rust/day01.rs"
+
+[[bin]]
+name = "day02"
+path = "src/rust/day02.rs"
+
+[[bin]]
+name = "day03"
+path = "src/rust/day03.rs"
+
+[[bin]]
+name = "day04"
+path = "src/rust/day04.rs"
