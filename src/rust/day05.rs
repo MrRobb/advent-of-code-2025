@@ -1,3 +1,4 @@
+use std::cmp::Ordering;
 use std::ops::Range;
 
 use itertools::Itertools;
@@ -38,14 +39,25 @@ fn merge_ranges(ranges: IngredientRanges) -> IngredientRanges {
         .collect()
 }
 
+fn is_in_range(range: &IngredientRange, ingredient: Ingredient) -> Ordering {
+    if range.contains(&ingredient) {
+        Ordering::Equal
+    } else if range.start > ingredient {
+        Ordering::Greater
+    } else {
+        Ordering::Less
+    }
+}
+
 pub fn how_many_fresh_check(input: &str) -> usize {
     let (ingredient_ranges, ingredient_list) = parse_input(input);
     let merged_ranges = merge_ranges(ingredient_ranges);
     ingredient_list
         .into_iter()
         .filter(|&ingredient| {
-            let idx = merged_ranges.partition_point(|range| range.end <= ingredient);
-            merged_ranges.get(idx).is_some_and(|range| range.contains(&ingredient))
+            merged_ranges
+                .binary_search_by(|range| is_in_range(range, ingredient))
+                .is_ok()
         })
         .count()
 }
