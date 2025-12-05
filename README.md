@@ -2,12 +2,13 @@
 
 [![license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/MrRobb/advent-of-code-2025/blob/master/LICENSE)
 
-|        | Problem                                            | Solution                                                                           | Execution time        | Lines of code | Finished |
-|--------|----------------------------------------------------|------------------------------------------------------------------------------------|-----------------------|---------------|----------|
-| Day 1  | [Problem 1](https://adventofcode.com/2025/day/1)   | [day01.rs](https://github.com/MrRobb/advent-of-code-2025/blob/master/src/rust/day01.rs) | 21.391 µs + 2.7970 ms | 64            | ✓        |
-| Day 2  | [Problem 2](https://adventofcode.com/2025/day/2)   | [day02.rs](https://github.com/MrRobb/advent-of-code-2025/blob/master/src/rust/day02.rs) | 176.77 ms + 206.82 ms | 48            | ✓        |
-| Day 3  | [Problem 3](https://adventofcode.com/2025/day/3)   | [day03.rs](https://github.com/MrRobb/advent-of-code-2025/blob/master/src/rust/day03.rs) | 106.74 µs + 160.37 µs | 57            | ✓        |
-| Day 4  | [Problem 4](https://adventofcode.com/2025/day/4)   | [day04.rs](https://github.com/MrRobb/advent-of-code-2025/blob/master/src/rust/day04.rs) | 319.14 µs + 9.5692 ms | 43            | ✓        |
+|        | Problem                                            | Solution                                                                                | Execution time        | Lines of code | Finished |
+|--------|----------------------------------------------------|-----------------------------------------------------------------------------------------|-----------------------|---------------|----------|
+| Day 1  | [Problem 1](https://adventofcode.com/2025/day/1)   | [day01.rs](https://github.com/MrRobb/advent-of-code-2025/blob/master/src/rust/day01.rs) | 21.391 µs + 2.7970 ms | 60            | ✓        |
+| Day 2  | [Problem 2](https://adventofcode.com/2025/day/2)   | [day02.rs](https://github.com/MrRobb/advent-of-code-2025/blob/master/src/rust/day02.rs) | 176.77 ms + 206.82 ms | 42            | ✓        |
+| Day 3  | [Problem 3](https://adventofcode.com/2025/day/3)   | [day03.rs](https://github.com/MrRobb/advent-of-code-2025/blob/master/src/rust/day03.rs) | 106.74 µs + 160.37 µs | 45            | ✓        |
+| Day 4  | [Problem 4](https://adventofcode.com/2025/day/4)   | [day04.rs](https://github.com/MrRobb/advent-of-code-2025/blob/master/src/rust/day04.rs) | 319.14 µs + 9.5692 ms | 38            | ✓        |
+| Day 5  | [Problem 5](https://adventofcode.com/2025/day/5)   | [day05.rs](https://github.com/MrRobb/advent-of-code-2025/blob/master/src/rust/day05.rs) | 57.490 µs + 47.808 µs | 60            | ✓        |
 
 > The benchmarks are measured (non-scientifically) with [cargo-criterion](https://github.com/bheisler/cargo-criterion) on a AMD Ryzen 5 3600 Desktop. More in the [benchmarks](#benchmarks) section.
 > The lines of code are measured using [ghloc](https://github.com/MrRobb/ghloc-rs), excluding comments and empty lines.
