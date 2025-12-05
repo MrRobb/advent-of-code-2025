@@ -43,6 +43,6 @@ path = "src/rust/day03.rs"
 name = "day04"
 path = "src/rust/day04.rs"
 
-[[
+[[bin]]
 name = "day05"
 path = "src/rust/day05.rs"
