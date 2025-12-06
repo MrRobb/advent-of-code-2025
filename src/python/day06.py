@@ -39,7 +39,7 @@ def parse_input_column(input: str) -> tuple[list[list[int]], list[str]]:
     numbers: list[list[int]] = []
     for line in res[:-1]:
         split_line = list(line)
-        for i, char in enumerate(reversed(split_line)):
+        for i, char in enumerate(split_line):
             if char != " ":
                 while len(numbers) <= i:
                     numbers.append([])
@@ -55,7 +55,7 @@ def parse_input_column(input: str) -> tuple[list[list[int]], list[str]]:
         joined_numbers[-1].append(number)
     operation_line = res[-1]
     operations = [s for s in operation_line.split(" ") if s != ""]
-    operations = list(reversed(operations))
+    operations = list(operations)
     return joined_numbers, operations
 
 
