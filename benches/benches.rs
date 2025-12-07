@@ -25,10 +25,16 @@ fn bench1(c: &mut Criterion) {
     // c.bench_function("Day 5 | Part 1", |b| b.iter(|| day05::how_many_fresh_check(&input05)));
     // c.bench_function("Day 5 | Part 2", |b| b.iter(|| day05::how_many_fresh_all(&input05)));
 
-    let input06 = read_to_string("input/day06.txt").expect("Input file not found");
-    c.bench_function("Day 6 | Part 1", |b| b.iter(|| day06::calculate_columns(&input06)));
-    c.bench_function("Day 6 | Part 2", |b| {
-        b.iter(|| day06::calculate_right_to_left(&input06));
+    // let input06 = read_to_string("input/day06.txt").expect("Input file not found");
+    // c.bench_function("Day 6 | Part 1", |b| b.iter(|| day06::calculate_columns(&input06)));
+    // c.bench_function("Day 6 | Part 2", |b| {
+    //     b.iter(|| day06::calculate_right_to_left(&input06));
+    // });
+
+    let input07 = read_to_string("input/day07.txt").expect("Input file not found");
+    c.bench_function("Day 7 | Part 1", |b| b.iter(|| day07::count_splits(&input07)));
+    c.bench_function("Day 7 | Part 2", |b| {
+        b.iter(|| day07::count_quantum(&input07));
     });
 }
 
