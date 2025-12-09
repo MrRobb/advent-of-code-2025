@@ -37,12 +37,20 @@ fn bench1(c: &mut Criterion) {
     //     b.iter(|| day07::count_quantum(&input07));
     // });
 
-    let input08 = read_to_string("input/day08.txt").expect("Input file not found");
-    c.bench_function("Day 8 | Part 1", |b| {
-        b.iter(|| day08::count_connected_components(&input08))
+    // let input08 = read_to_string("input/day08.txt").expect("Input file not found");
+    // c.bench_function("Day 8 | Part 1", |b| {
+    //     b.iter(|| day08::count_connected_components(&input08));
+    // });
+    // c.bench_function("Day 8 | Part 2", |b| {
+    //     b.iter(|| day08::count_last_joint(&input08));
+    // });
+
+    let input09 = read_to_string("input/day09.txt").expect("Input file not found");
+    c.bench_function("Day 9 | Part 1", |b| {
+        b.iter(|| day09::get_largest_rect_area(&input09));
     });
-    c.bench_function("Day 8 | Part 2", |b| {
-        b.iter(|| day08::count_last_joint(&input08));
+    c.bench_function("Day 9 | Part 2", |b| {
+        b.iter(|| day09::get_largest_rect_in_polygon_area(&input09));
     });
 }
 

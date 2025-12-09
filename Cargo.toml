@@ -60,3 +60,7 @@ path = "src/rust/day07.rs"
 [[bin]]
 name = "day08"
 path = "src/rust/day08.rs"
+
+[[bin]]
+name = "day09"
+path = "src/rust/day09.rs"
