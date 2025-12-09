@@ -31,10 +31,18 @@ fn bench1(c: &mut Criterion) {
     //     b.iter(|| day06::calculate_right_to_left(&input06));
     // });
 
-    let input07 = read_to_string("input/day07.txt").expect("Input file not found");
-    c.bench_function("Day 7 | Part 1", |b| b.iter(|| day07::count_splits(&input07)));
-    c.bench_function("Day 7 | Part 2", |b| {
-        b.iter(|| day07::count_quantum(&input07));
+    // let input07 = read_to_string("input/day07.txt").expect("Input file not found");
+    // c.bench_function("Day 7 | Part 1", |b| b.iter(|| day07::count_splits(&input07)));
+    // c.bench_function("Day 7 | Part 2", |b| {
+    //     b.iter(|| day07::count_quantum(&input07));
+    // });
+
+    let input08 = read_to_string("input/day08.txt").expect("Input file not found");
+    c.bench_function("Day 8 | Part 1", |b| {
+        b.iter(|| day08::count_connected_components(&input08))
+    });
+    c.bench_function("Day 8 | Part 2", |b| {
+        b.iter(|| day08::count_last_joint(&input08));
     });
 }
 
