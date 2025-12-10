@@ -16,41 +16,37 @@ def parse_input(input) -> list[list[str], list[list[int]], list[int]]:
     res.append((indicator_light_diagram, button_wiring_schematics, joltage_requirements))
   return res
 
-def simulate(path, lights_length):
-  lights = [False] * lights_length
-  for button in path:
-    for light in button:
-      lights[light] = not lights[light]
-  return lights
-
-def solve(machine):
+def solve_with_indicator_lights(machine):
   indicator_light_diagram, button_wiring_schematics, joltage_requirements = machine
-  print(indicator_light_diagram, button_wiring_schematics, joltage_requirements)
-  paths = deque()
-  paths.append([])
-  
-  while paths:
-    path = paths.popleft()
-    lights = simulate(path, len(indicator_light_diagram))
 
-    if lights == indicator_light_diagram:
-      return len(path)
-    
-    for button in button_wiring_schematics:
-      new_path = path.copy()
-      new_path.append(button)
-      paths.append(new_path)
+  solver = z3.Optimize()
+  presses = [ z3.Int(f"button_{i}") for i in range(len(button_wiring_schematics)) ]
 
+  # Button presses are positive integers
+  for i in range(len(button_wiring_schematics)):
+    solver.add(presses[i] >= 0)
+
+  # The indicator light is on if the sum of the number of presses for each button that affects the indicator light is odd
+  for i in range(len(indicator_light_diagram)):
+    terms = []
+    for j in range(len(button_wiring_schematics)):
+      if i in button_wiring_schematics[j]:
+        # if the button affects the indicator light, add the number of presses to the terms
+        terms.append(presses[j])
+    equation = z3.Sum(terms) % 2 == int(indicator_light_diagram[i])
+    solver.add(equation)
+
+  # Minimize the total number of button presses
+  solver.minimize(z3.Sum(presses))
+
+  if solver.check() == z3.sat:
+    return solver.model().eval(z3.Sum(presses)).as_long()
   return -1
-
-
-def solve_with_joltage(machine):
-  indicator_light_diagram, button_wiring_schematics, joltage_requirements = machine
 
 def part1(input):
   total_presses = 0
   for machine in input:
-    presses = solve(machine)
+    presses = solve_with_indicator_lights(machine)
     total_presses += presses
   return total_presses
 
