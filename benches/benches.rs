@@ -45,12 +45,20 @@ fn bench1(c: &mut Criterion) {
     //     b.iter(|| day08::count_last_joint(&input08));
     // });
 
-    let input09 = read_to_string("input/day09.txt").expect("Input file not found");
-    c.bench_function("Day 9 | Part 1", |b| {
-        b.iter(|| day09::get_largest_rect_area(&input09));
+    // let input09 = read_to_string("input/day09.txt").expect("Input file not found");
+    // c.bench_function("Day 9 | Part 1", |b| {
+    //     b.iter(|| day09::get_largest_rect_area(&input09));
+    // });
+    // c.bench_function("Day 9 | Part 2", |b| {
+    //     b.iter(|| day09::get_largest_rect_in_polygon_area(&input09));
+    // });
+
+    let input11 = read_to_string("input/day11.txt").expect("Input file not found");
+    c.bench_function("Day 11 | Part 1", |b| {
+        b.iter(|| day11::find_all_paths(&input11));
     });
-    c.bench_function("Day 9 | Part 2", |b| {
-        b.iter(|| day09::get_largest_rect_in_polygon_area(&input09));
+    c.bench_function("Day 11 | Part 2", |b| {
+        b.iter(|| day11::find_all_paths_with_dac_and_fft(&input11));
     });
 }
 
