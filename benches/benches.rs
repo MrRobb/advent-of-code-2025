@@ -53,13 +53,21 @@ fn bench1(c: &mut Criterion) {
     //     b.iter(|| day09::get_largest_rect_in_polygon_area(&input09));
     // });
 
-    let input11 = read_to_string("input/day11.txt").expect("Input file not found");
-    c.bench_function("Day 11 | Part 1", |b| {
-        b.iter(|| day11::find_all_paths(&input11));
+    let input10 = read_to_string("input/day10.txt").expect("Input file not found");
+    c.bench_function("Day 10 | Part 1", |b| {
+        b.iter(|| day10::solve_all_indicator_lights(&input10));
     });
-    c.bench_function("Day 11 | Part 2", |b| {
-        b.iter(|| day11::find_all_paths_with_dac_and_fft(&input11));
+    c.bench_function("Day 10 | Part 2", |b| {
+        b.iter(|| day10::solve_all_joltage_requirements(&input10));
     });
+
+    // let input11 = read_to_string("input/day11.txt").expect("Input file not found");
+    // c.bench_function("Day 11 | Part 1", |b| {
+    //     b.iter(|| day11::find_all_paths(&input11));
+    // });
+    // c.bench_function("Day 11 | Part 2", |b| {
+    //     b.iter(|| day11::find_all_paths_with_dac_and_fft(&input11));
+    // });
 }
 
 criterion_group!(benches, bench1);

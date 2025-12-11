@@ -13,7 +13,7 @@
 | Day 7  | [Problem 7](https://adventofcode.com/2025/day/7)   | [day07.rs](https://github.com/MrRobb/advent-of-code-2025/blob/master/src/rust/day07.rs) | 110.86 µs + 80.175 µs | 45            | ✓        |
 | Day 8  | [Problem 8](https://adventofcode.com/2025/day/8)   | [day08.rs](https://github.com/MrRobb/advent-of-code-2025/blob/master/src/rust/day08.rs) | 32.984 ms + 59.031 ms | 80            | ✓        |
 | Day 9  | [Problem 9](https://adventofcode.com/2025/day/9)   | [day09.rs](https://github.com/MrRobb/advent-of-code-2025/blob/master/src/rust/day09.rs) | 218.52 µs + 307.47 ms | 160            | ✓        |
-| Day 10  | [Problem 10](https://adventofcode.com/2025/day/10)   | [day10.rs](https://github.com/MrRobb/advent-of-code-2025/blob/master/src/rust/day10.rs) |  |             | ✘        |
+| Day 10  | [Problem 10](https://adventofcode.com/2025/day/10)   | [day10.rs](https://github.com/MrRobb/advent-of-code-2025/blob/master/src/rust/day10.rs) | 235.69 ms + 266.41 ms | 86            | ✓        |
 | Day 11  | [Problem 11](https://adventofcode.com/2025/day/11)   | [day11.rs](https://github.com/MrRobb/advent-of-code-2025/blob/master/src/rust/day11.rs) | 188.19 µs + 185.73 µs | 49            | ✓        |
 
 > The benchmarks are measured (non-scientifically) with [cargo-criterion](https://github.com/bheisler/cargo-criterion) on a AMD Ryzen 5 3600 Desktop. More in the [benchmarks](#benchmarks) section.
