@@ -27,8 +27,7 @@ fn parse_input(input: &str) -> (Vec<Present>, Vec<Region>) {
     let presents = sections
         .iter()
         .map(|section| {
-            let lines: Vec<&str> = section.lines().collect();
-            let shape = lines.iter().skip(1).map(|line| line.chars().collect()).collect();
+            let shape = section.lines().skip(1).map(|line| line.chars().collect()).collect();
             Present { shape }
         })
         .collect();
@@ -53,7 +52,7 @@ fn parse_input(input: &str) -> (Vec<Present>, Vec<Region>) {
 }
 
 fn region_fits(region: &Region, present_list: &[Present]) -> bool {
-    let total_present_area: usize = region
+    let total_present_area = region
         .presents
         .iter()
         .zip(present_list.iter())
